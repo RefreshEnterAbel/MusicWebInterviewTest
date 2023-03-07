@@ -40,6 +40,15 @@ app.get("/", (req, res) => {
 // album URI routes
 const albumRoutes = require("./api/routes/album"); 
 app.use("/album", albumRoutes)
+// music URI routes
+const musicRoutes = require("./api/routes/music"); 
+app.use("/music", musicRoutes)
+// gener URI routes
+const generRoutes = require("./api/routes/gener"); 
+app.use("/gener", generRoutes)
+// artist URI routes
+const artistRoutes = require("./api/routes/artist"); 
+app.use("/artist", artistRoutes)
 
 
 //API listen PORT (4000)

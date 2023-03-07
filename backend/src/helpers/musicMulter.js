@@ -1,5 +1,5 @@
-let multer = require("multer");
-const path = require('path');
+import multer from "multer";
+
 const storage = multer.diskStorage({
   destination: (req, res, cb) => {
     cb(null, './uploads/music');
@@ -11,20 +11,22 @@ const storage = multer.diskStorage({
 });
 const fileFilter = (req, file, cb) => {
   if (
-     file.mimetype === "audio/mpeg" ||
-     file.mimetype === "audio/wave" ||
-     file.mimetype === "audio/wav" ||
-     file.mimetype === "audio/mp3"
+    file.mimetype === "audio/mpeg" ||
+    file.mimetype === "audio/wave" ||
+    file.mimetype === "audio/wav" ||
+    file.mimetype === "audio/mp3"
   ) {
     cb(null, true);
   } else {
     cb(null, false);
   }
 };
-exports.upload = multer({
+const musicUpload = multer({
   storage: storage,
   limits: {
     fileSize: 1024 * 1024 * 5
   },
   fileFilter: fileFilter
 }).single("music");
+
+export default musicUpload;

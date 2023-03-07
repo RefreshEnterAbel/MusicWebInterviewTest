@@ -2,18 +2,28 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "Addis Software Test Project backend",
-  "main": "index.js",
+  "type": "module",
+  "author": "Refreshenterabel",
+  "keywords": [
+    "React.js",
+    "Expres.js",
+    "MongoDB",
+    "RefreshEnterAbel",
+    "Abel Tadesse",
+    "Fullstack",
+    "AddisSoftware"
+  ],
+  "license": "ISC",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon src/service.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-rate-limit": "^6.7.0",
     "mongoose": "^7.0.1",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",

@@ -1,5 +1,4 @@
-let multer = require("multer");
-const path = require('path');
+import multer from "multer";
 // album posture image
 const postureStorage = multer.diskStorage({
   destination: (req, res, cb) => {
@@ -22,7 +21,7 @@ const fileFilter = (req, file, cb) => {
     cb(null, false);
   }
 };
-exports.upload = multer({
+export const upload = multer({
   storage: postureStorage,
   limits: {
     fileSize: 1024 * 1024 * 1

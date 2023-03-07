@@ -1,6 +1,6 @@
-let mongoose = require("mongoose");
+import mongoose from "mongoose";
 
-let albumSchema = mongoose.Schema({
+const albumSchema = mongoose.Schema({
   title: {
     type: String,
     required: true
@@ -28,4 +28,4 @@ let albumSchema = mongoose.Schema({
 });
 
 
-module.exports = mongoose.model("Album", albumSchema);
+export default mongoose.model("Album", albumSchema);
